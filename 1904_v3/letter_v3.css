@@ -18,7 +18,7 @@ body {
 
 /** header **/
 .header {
-  width: 70%;
+  width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -26,6 +26,7 @@ body {
 .title {
 	height: 86px;
 	padding: 10px;
+	margin: 0 50px;
 	content: "";
 	display: block;
 	clear: both
@@ -105,7 +106,7 @@ body {
 }
 
 .navigation #showmenu {
-	height: 180px;
+	height: 175px;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
@@ -113,7 +114,7 @@ body {
 
 .navigation #showmenu #shadowmenu {
 	height: 100%;
-	margin: 0 38px;
+	margin: 0 50px;
 	background-image: url("v3_img/menubar.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -128,7 +129,7 @@ body {
 	margin: 0;
 	padding: 5px 0;
 	list-style: none;
-	width: 1034px;
+	width: 1000px;
 	position: absolute;
 	bottom: 0;
 }
@@ -190,7 +191,7 @@ body {
 /** mainbox **/
 .mainbox {
 	margin: 20px auto;
-	min-height: 1550px;
+	min-height: 1950px;
 }
 
 .mainbox .contents {
@@ -199,27 +200,43 @@ body {
 	clear: both
 }
 
+.mainbox .contents .bigleftbox {
+	float: left;
+	width: 650px;
+	margin: 0 50px 0 50px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 .mainbox .contents .leftbox,
 .mainbox .contents .centerbox,
 .mainbox .contents .rightbox {
 	float: left;
-	max-width: 363px;
+	max-width: 350px;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	padding: 0 5px 0 5px
 }
 
+.mainbox .contents .leftbox .newsbox {
+	margin-right: 25px;
+}
+.mainbox .contents .centerbox .newsbox {
+	margin-left: 25px;
+}
+
+
 /** image 슬라이드쇼 **/
-.mainbox .contents .centerbox #subject {
+
+.mainbox .contents .bigleftbox #subject {
 	position: relative;
 	background-color: #c1e0e0;
 	border-radius: 15px;
   box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2);
-	width: 300px;
-	height: 180px;
+	height: 400px;
 	padding: 10px;
-	margin: 0 auto 20px auto;
+	margin: 0 auto 30px auto;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box
@@ -230,11 +247,13 @@ body {
 	display: none;
 	width: 100%;
 	height: 100%;
+	border-radius: 5px;
+	border: none;
 }
 
 .slideshow {
-	color: white;
-	width: 250px;
+	color: #30662e;
+	width: 550px;
 	margin: 16px auto 5px auto;
 	text-align: center;
 	font-size: 18px;
@@ -257,7 +276,7 @@ body {
 
 .currentshow {
 	color: #black!important;
-	background-color: #ffffff!important;
+	background-color: #30662e!important;
 }
 
 .slideshow .badge {
@@ -275,22 +294,34 @@ body {
 
 .slideshow .badge:hover {
 	color: #000!important;
-	background-color: white!important
+	background-color: #30662e!important
 }
 
 .newsbox {
-	width: 366px;
+	width: 300px;
 	margin-bottom: 30px;
 }
 
 .newsbox .box {
 	width: 300px;
-	height: 360px;
+	height: 400px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-#box_l1, #box_l2, #box_l3, #box_l4, #box_c1, #box_c2, #box_c3, #box_r1, #box_r2, #box_r3, #box_r4 {
+.newsbox .textbox {
+	width: 300px;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.newsbox .textbox #textboxcontents {
+	padding: 5px 0 10px 0;
+	height: 180px;
+}
+
+#box_l1, #box_l2, #box_l3, #box_l4, #box_c1, #box_c2, #box_c3, #box_c4, #box_r1, #box_r2, #box_r3, #box_r4 {
 	height: 100%;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -304,21 +335,23 @@ body {
 #box_l4 {	background-color: #c1e0e0; }
 #box_c1 {	background-color: #ffe1e1; }
 #box_c2 {	background-color: #88c163; }
-#box_c3 {	background-color: #ffcaca; }
+#box_c3 {	background-color: #c1e0e0; }
+#box_c4 {	background-color: #ffcaca; }
 #box_r1 {	background-color: #abe288; }
 #box_r2 {	background-color: #c1e0e0; }
 #box_r3 {	background-color: #ffe1e1; }
 #box_r4 {	background-color: #88c163; }
 
 #boxtitle h1 {
-	margin: 0 0 10px 0;
+	margin: 10px 0 10px 0;
 	font-size: 20px;
 	font-weight: bold;
 	color: #30662e;
 }
 
 #boxcontents {
-	height: 60px;
+	height: 70px;
+	display: table;
 }
 
 #boxcontents p {
@@ -330,7 +363,7 @@ body {
 
 .boxdetail {
 	text-align: center;
-	margin: 20px 0;
+	margin: 10px 0;
 	width: 80px;
 	border: solid 2px #30662e;
 }
@@ -350,7 +383,7 @@ body {
 
 .newsbox .box .boximage {
 	width: 270px;
-	height: 160px;
+	height: 180px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
@@ -358,6 +391,7 @@ body {
 .newsbox .box .boximage img {
 	width: 100%;
 	height: 100%;
+	border-radius: 5px;
 }
 
 /** copyright **/
