@@ -6,11 +6,12 @@ body {
 }
 
 .background {
-  max-width: 100%;
+  min-width: 1100px;
 	background-image: url("v3_img/background.png");
 	background-size: cover;
+	background-attachment: fixed;
 	background-position:center;
-	background-repeat: no-repeat, no-repeat;
+	background-repeat: no-repeat;
 	margin: auto;
 	padding-top:3px;
 	padding-bottom:3px;
@@ -34,7 +35,7 @@ body {
 
 .title #title {
 	float: left;
-	width: 90%;
+	width: 80%;
 	content: "";
 	display: block;
 	clear: both
@@ -72,7 +73,7 @@ body {
 
 .title #volume {
 	float: left;
-	width: 10%;
+	width: 20%;
 	height: 66px;
 	padding: 19px 0 0 0;
 }
@@ -161,6 +162,16 @@ body {
 }
 
 /** hide navigation **/
+.menutoggle {
+	display: none;
+	text-align: center;
+	font-size: 15px;
+	line-height: 21px;
+	color: white;
+	padding: 5px;
+	margin: 0px;
+	cursor: pointer
+}
 .menutoggle {
 	display: none;
 	text-align: center;
@@ -311,7 +322,7 @@ body {
 
 .newsbox .textbox {
 	width: 300px;
-	height: 200px;
+	height: 230px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -359,6 +370,22 @@ body {
 	font-size: 15px;
 	line-height: 20px;
 	color: #5e6361;
+}
+
+.relay_button {
+	width: 50%;
+	float: left;
+}
+
+#relay_button {
+	width: 100px;
+	border-radius: 5px;
+	margin: 10px auto;
+}
+
+#relay_button a {
+	font-size: 13px;
+
 }
 
 .boxdetail {
@@ -413,6 +440,7 @@ body {
 	float: left;
 	width: 50%;
 	height: 100%;
+	text-align: left;
 	display: table;
 }
 
@@ -435,6 +463,10 @@ body {
 	display: table-cell;
 	vertical-align: middle;
 }
+.footer .copyright .footerright span{
+	display: none;
+	height: 0;
+}
 
 @media (max-width: 705px) {
 	.footer .copyright .footerleft {
@@ -446,16 +478,25 @@ body {
 	}
 	.footer .copyright .footerleft p {
 		padding-bottom: 0px;
+		text-align: center;
 	}
 	.footer .copyright .footerright p {
 		padding-top: 5px;
+		text-align: center;
 	}
 }
 
 /** 반응형 **/
 @media (max-width: 845px) {
+	.background {
+		max-width: 845px;
+		min-width: 580px;
+	}
 	.title {
 		height: 76px
+	}
+	.title #title {
+		width: 80%;
 	}
 	.title #title #logo img {
 		width: 60%;
@@ -487,44 +528,90 @@ body {
 		font-size: 15px;
 		line-height: 23px
 	}
-	.navigation #showmenu li {
+	.navigation #showmenu li, .slidebox {
 		display: none
+	}
+	.navigation #showmenu #shadowmenu {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.navigation #showmenu, .navigation #showmenu #shadowmenu {
+		height: 15vw;
 	}
 	.navigation {
 		padding: 0
 	}
+	.navigation ul {
+		width: 100%;
+		position: relative;
+	}
+	.navigation #hidemenu {
+		background-color: #76b24f;
+    margin: 0 50px;
+	}
 	.menutoggle {
 		display: block;
-		padding: 10px
+		padding: 2.5px;
+		position: absolute;
+		font-size: 2vw;
+		left: 50%;
+		bottom: 0;
+		transform: translate(-50%, 0);
 	}
-	.mainbox, .contents{
-		max-width: 845px;
-		height: 1830px;
-		margin: 10px auto
-	}
+	.mainbox .contents .bigleftbox,
 	.mainbox .contents .leftbox,
 	.mainbox .contents .centerbox,
 	.mainbox .contents .rightbox {
+		width: 100%;
 		float: none;
-		height: 910px;
-		margin-left: auto;
-		margin-right: auto
 	}
-	.footer {
-		text-align: center
+	.mainbox .contents .bigleftbox,
+	.mainbox .contents .leftbox,
+	.mainbox .contents .centerbox,
+	.mainbox .contents .rightbox {
+		margin: 0 auto;
+	}
+	.newsbox {
+		width: 350px;
+		margin-left: 0!important;
+		margin-right: 0!important;
+	}
+	.newsbox .textbox {
+		width: 280px;
+	}
+	#boxtitle h1 {
+			font-size: 15px;
+	}
+	#boxcontents p {
+		font-size: 12px;
+	}
+	.newsbox .box .boximage {
+    width: 250px;
+    height: 150px;
+	}
+	.newsbox .box {
+    width: 280px;
+    height: 360px;
+	}
+	.footer .copyright p {
+		font-size: 11px;
 	}
 }
 
 @media (max-width: 599px) {
+	.background {
+		min-width: 380px;
+	}
 	.title {
 		height: 68px;
 		padding: 5px 10px;
+		margin: 0;
 	}
 	.title #title {
 		width: 70%;
 	}
 	.title #title #logo img {
-		width: 70%;
+		width: 100%;
 		height: 73px
 	}
 	.title #title .name #name a {
@@ -553,6 +640,23 @@ body {
 		line-height: 20px;
 		padding-bottom: 0
 	}
+	.navigation {
+		background-color: #76b24f;
+	}
+	.navigation ul {
+		display: block;
+		width: 100%;
+		position: relative;
+	}
+	.navigation #showmenu {
+		height: 30px;
+	}
+	.navigation #showmenu #shadowmenu {
+		background-image: none;
+		height: 30px;
+		border-radius: 10px;
+		box-shadow: none;
+	}
 	.menutoggle {
 		font-size: 13px;
 		line-height: 19px
@@ -564,39 +668,62 @@ body {
 	.mainbox .contents .leftbox,
 	.mainbox .contents .centerbox,
 	.mainbox .contents .rightbox {
-		height: auto
+		height: auto;
+		width: 300px;
 	}
-	.slideshow {
-		width: 200px
+	.newsbox {
+		width: 300px;
 	}
-	.mainbox .contents .newsbox {
-		max-width: 320px;
-		height: 100%;
-		margin: 0 auto
+	.newsbox .box {
+		width: 250px;
+		height: 300px;
 	}
-	.mainbox .contents .newsbox .box {
-		width: 320px;
-		height: 220px;
-		float: none;
-		margin-top: 10px
+	.newsbox .textbox {
+		width: 250px;
+		height: 170px;
 	}
-	.mainbox .contents .newsbox .box h1 {
-		font-size: 17px;
+	.newsbox .box .boximage {
+		width: 220px;
+		height: 130px;
+	}
+	#boxtitle h1 {
+		margin: 0;
+		font-size: 13px;
 		line-height: 25px
+	}
+	#boxcontents {
+		height: 50px;
+	}
+	#boxcontents p {
+		line-height: 15px;
+		margin: 5px 0;
+	}
+	#relay_button a{
+		font-size: 10px;
+	}
+	#relay_button {
+		width: 80px;
+		margin: 5px auto;
+	}
+	.newsbox .textbox #textboxcontents {
+		height: 125px;
 	}
 	.mainbox .contents .newsbox .box p {
 		font-size: 14px;
 		line-height: 22px
 	}
-	.mainbox .contents .newsbox .box a {
+	.mainbox .contents .newsbox a {
 		font-size: 11px;
-		line-height: 17px;
-		bottom: 10%;
-		left: 113.5px
+	}
+	.navigation li a {
+		font-size: 14px;
 	}
 }
 
 @media (max-width: 400px) {
+	.background {
+		min-width: 300px;
+	}
 	.title {
 		height: 50px;
 		padding-bottom: 0
@@ -605,7 +732,7 @@ body {
 		width: 70%;
 	}
 	.title #title #logo img {
-		width: 70%;
+		width: 100%;
 		height: 50px;
 	}
 	.title #title .name {
@@ -630,38 +757,47 @@ body {
 		font-size: 11px;
 		line-height: 19px
 	}
-}
-
-@media (min-width: 300px) and (max-width: 340px) {
-	.mainbox, .contents{
-		max-width: 320px;
-		height: 100%
-	}
 	.mainbox .contents .leftbox,
 	.mainbox .contents .centerbox,
 	.mainbox .contents .rightbox {
-		height: auto
+		height: auto;
+		width: 250px;
 	}
-	.slideshow {
-		width: 180px
+	.newsbox {
+	  width: 250px;
 	}
-	.mainbox .contents .newsbox {
-		max-width: 270px;
-		height: 100%;
-		margin: 0 auto
+	.newsbox .box {
+	  width: 220px;
+	  height: 250px;
 	}
-	.mainbox .contents .newsbox .box {
-		width: 270px;
-		height: 230px;
-		float: none;
-		margin-top: 10px
+	.newsbox .box .boximage {
+    width: 190px;
+    height: 100px;
 	}
-	.mainbox .contents .newsbox .box a {
-		bottom: 30px;
-		left: 88.5px
+	#boxtitle h1 {
+    margin: 0;
+    font-size: 12px;
+    line-height: 17px;
+ 	}
+	#boxcontents p {
+    font-size: 11px;
 	}
-	.footer .copyright p {
-		font-size: 10px
+	.boxdetail {
+		margin: 5px 0;
+    width: 60px;
+	}
+	.mainbox .contents .newsbox a {
+    font-size: 10px;
+	}
+	.newsbox .textbox {
+    width: 220px;
+    height: 165px;
+	}
+	.navigation li a {
+		font-size: 12px;
+	}
+	.footer .copyright .footerright span{
+		display: block;
 	}
 }
 
@@ -669,22 +805,10 @@ body {
 	.mainbox {
 		width: 1100px
 	}
-	.name #subname #phonesubtitle {
-		display: none
-	}
 	.header, .navigation #showmenu, .navigation #hidemenu {
-		max-width: 1100px
+		width: 1100px
 	}
-	.navigation #hidemenu {
+	/* .navigation #hidemenu {
 		display: none;
-	}
-}
-
-@media (max-width: 440px) {
-	.name #subname #sitesubtitle {
-		display: none
-	}
-	.name #subname #phonesubtitle {
-		display: block
-	}
+	} */
 }
